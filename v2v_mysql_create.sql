@@ -54,7 +54,6 @@ CREATE TABLE `delivery` (
 	`Delivery_By` varchar(50) NOT NULL,
 	`Delivery_Date` DATE NOT NULL,
 	`Delivery_Customer_Id` bigint NOT NULL,
-	`Courier_Id` bigint NOT NULL,
 	PRIMARY KEY (`Delivery_Id`)
 );
 
@@ -66,6 +65,7 @@ CREATE TABLE `courier` (
 	`Courier_Product_Id` bigint NOT NULL,
 	`Courier_Customer_Id` bigint NOT NULL,
 	`Courier_Current_Location` varchar(50) NOT NULL,
+	`Courier_Deli_Id` bigint NOT NULL,
 	PRIMARY KEY (`Courier_Id`)
 );
 
@@ -92,7 +92,8 @@ CREATE TABLE `login` (
 	`Login_Id` bigint NOT NULL AUTO_INCREMENT,
 	`Login_Role_Id` bigint NOT NULL,
 	`Login_User_Name` varchar(50) NOT NULL,
-	`Login_User_Password` varchar(50) NOT NULL
+	`Login_User_Password` varchar(50) NOT NULL,
+	PRIMARY KEY (`Login_Id`)
 );
 
 ALTER TABLE `user` ADD CONSTRAINT `user_fk0` FOREIGN KEY (`User_Role_Id`) REFERENCES `role`(`Role_Id`);
@@ -101,11 +102,10 @@ ALTER TABLE `permission` ADD CONSTRAINT `permission_fk0` FOREIGN KEY (`Permissio
 
 ALTER TABLE `delivery` ADD CONSTRAINT `delivery_fk0` FOREIGN KEY (`Delivery_Customer_Id`) REFERENCES `customer`(`Customer_Id`);
 
-ALTER TABLE `delivery` ADD CONSTRAINT `delivery_fk1` FOREIGN KEY (`Courier_Id`) REFERENCES `courier`(`Courier_Id`);
-
 ALTER TABLE `courier` ADD CONSTRAINT `courier_fk0` FOREIGN KEY (`Courier_Product_Id`) REFERENCES `product`(`Product_Id`);
 
 ALTER TABLE `courier` ADD CONSTRAINT `courier_fk1` FOREIGN KEY (`Courier_Customer_Id`) REFERENCES `customer`(`Customer_Id`);
 
-ALTER TABLE `login` ADD CONSTRAINT `login_fk0` FOREIGN KEY (`Login_Role_Id`) REFERENCES `role`(`Role_Id`);
+ALTER TABLE `courier` ADD CONSTRAINT `courier_fk2` FOREIGN KEY (`Courier_Deli_Id`) REFERENCES `delivery`(`Delivery_Id`);
 
+ALTER TABLE `login` ADD CONSTRAINT `login_fk0` FOREIGN KEY (`Login_Role_Id`) REFERENCES `role`(`Role_Id`);
