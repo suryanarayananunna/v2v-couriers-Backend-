@@ -25,7 +25,9 @@ public class RegistrationController {
 	RegistraionRepository regisrepos;
 
 	RegistrationService regser = new RegistrationService();
-	@CrossOrigin(origins = "http://localhost:4200")
+	
+	//@CrossOrigin(origins = "http://localhost:4200)
+	@CrossOrigin(origins = "http://localhost:8100")
 	@RequestMapping(value="/register",method = RequestMethod.POST)
 	public String register(@RequestBody RegistrationModel registrationmodel) {
 		//bussiness service logic implement here

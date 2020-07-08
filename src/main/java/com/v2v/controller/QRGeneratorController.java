@@ -28,12 +28,14 @@ public class QRGeneratorController {
 		QRGenerateService qrgenerateservice = new QRGenerateService();
 		
 		
-		@CrossOrigin(origins = "http://localhost:4200")
+		//@CrossOrigin(origins = "http://localhost:4200")
+		@CrossOrigin(origins = "http://localhost:8100")
 		@RequestMapping(value="/qrgenerate",method = RequestMethod.POST)
 		public void qrgenerator(@RequestBody CourierModel CourierModel) {
 			//bussiness service logic implement here
 			 
 			try {
+				CourierModel.setCourierId(CourierModel.CourierProductId);
 				courierservicerepos.save(CourierModel);
 				qrgenerateservice.generateQrCode(CourierModel);
 			} catch (NotFoundException | WriterException | IOException e) {

@@ -9,18 +9,19 @@ import javax.persistence.Table;
 @Table(name = "login")
 public class LoginModel {
 
-	@Id
+	
 	@Column(name="Login_id")
 	private int Login_id;
 	
 	@Column(name="Login_Role_Id")
-	private int Login_Role_Id;
+	public int Login_Role_Id;
 
+	@Id
 	@Column(name="Login_User_Name")
-	private String Login_User_Name;
+	public String Login_User_Name;
 
 	@Column(name="Login_User_Password")
-	private String Login_User_Password;
+	public String Login_User_Password;
 
 	public LoginModel() {
 		super();

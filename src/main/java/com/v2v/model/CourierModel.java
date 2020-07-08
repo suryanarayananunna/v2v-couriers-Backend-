@@ -48,8 +48,8 @@ public class CourierModel {
 	public String getCourierId() {
 		return CourierId;
 	}
-	public void setCourierId(String courierId) {
-		CourierId = courierId;
+	public void setCourierId(String CourierProductId) {
+		CourierId = CourierProductId;
 	}
 	public String getCourierName() {
 		return CourierName;
