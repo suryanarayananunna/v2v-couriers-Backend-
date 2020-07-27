@@ -12,7 +12,7 @@ public class ProductModel {
 	
 	@Id
 	@Column(name="Product_Id")
-	private int Product_Id;
+	public int Product_Id;
 
 	@Column(name="Product_Desc")
 	private String Product_Desc;

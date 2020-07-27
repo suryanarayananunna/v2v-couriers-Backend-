@@ -11,7 +11,7 @@ public class CourierModelNew {
 	
 	@Id
 	@Column(name="Courier_Id")
-	private int Courier_id;
+	public int Courier_id;
 	
 	@Column(name="Courier_Current_Location")
 	private String Courier_Current_Location;

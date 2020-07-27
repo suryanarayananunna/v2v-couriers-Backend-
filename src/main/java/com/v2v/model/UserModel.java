@@ -14,7 +14,7 @@ public class UserModel{
 
 	@Id
 	@Column(name="User_Id")
-	private int User_Id;
+	public int User_Id;
 	
 	@Column(name="User_Address")
 	private String User_Address;

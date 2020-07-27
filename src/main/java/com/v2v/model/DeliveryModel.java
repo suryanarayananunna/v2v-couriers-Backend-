@@ -12,8 +12,8 @@ import javax.persistence.Table;
 public class DeliveryModel {
 	
 	@Id
-	@Column(name="Customer_Id")
-	private int Delivery_Id;
+	@Column(name="Delivery_Id")
+	public int Delivery_Id;
 	
 	@Column(name="Delivery_Address")
 	private String Delivery_Address;
@@ -32,13 +32,16 @@ public class DeliveryModel {
 	
 	@Column(name="Delivery_Type")
 	private String Delivery_Type;
+	
+	@Column(name="Delivery_Person_Name")
+	private String Delivery_Person_Name;
 
 	public DeliveryModel() {
 		super();
 	}
 
 	public DeliveryModel(int delivery_Id, String delivery_Address, String delivery_Desc, String delivery_Type,
-			String delivery_By, Date delivery_Date, int delivery_Customer_Id) {
+			String delivery_By, Date delivery_Date, int delivery_Customer_Id,String delivery_Person_Name) {
 		super();
 		Delivery_Id = delivery_Id;
 		Delivery_Address = delivery_Address;
@@ -47,6 +50,15 @@ public class DeliveryModel {
 		Delivery_By = delivery_By;
 		Delivery_Date = delivery_Date;
 		Delivery_Customer_Id = delivery_Customer_Id;
+		Delivery_Person_Name = delivery_Person_Name;
+	}
+
+	public String getDelivery_Person_Name() {
+		return Delivery_Person_Name;
+	}
+
+	public void setDelivery_Person_Name(String delivery_Person_Name) {
+		Delivery_Person_Name = delivery_Person_Name;
 	}
 
 	public String getDelivery_address(){

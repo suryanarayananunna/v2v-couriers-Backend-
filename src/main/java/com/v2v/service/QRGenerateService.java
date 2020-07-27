@@ -3,7 +3,7 @@ package com.v2v.service;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.v2v.model.CourierModel;
+
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -29,6 +29,7 @@ import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.common.HybridBinarizer;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
+import com.v2v.model.CourierModel;
 
 public class QRGenerateService  {
 

@@ -11,7 +11,7 @@ public class CustomerModel {
 
 	@Id
 	@Column(name="Customer_Id")
-	private int Customer_Id;
+	public int Customer_Id;
 	
 	@Column(name="Customer_Address")
 	private String Customer_Address;
